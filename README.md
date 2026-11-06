@@ -12,7 +12,15 @@ The SDK exposes **392 typed methods**, one per documented endpoint, each with a 
 
 ## Installation
 
-Maven:
+The SDK is not on Maven Central. Build it from source, which installs it in your local Maven repository:
+
+```sh
+git clone https://github.com/piloterr/piloterr-java.git
+cd piloterr-java
+mvn -q install -DskipTests
+```
+
+Then add it to your project. Maven:
 
 ```xml
 <dependency>
@@ -22,7 +30,7 @@ Maven:
 </dependency>
 ```
 
-Gradle:
+Gradle, with `mavenLocal()` in your repositories:
 
 ```kotlin
 implementation("com.piloterr:piloterr:0.1.0")
@@ -547,6 +555,20 @@ PiloterrClient client = PiloterrClient.builder()
 | `zooplusSearch()` | GET / POST `/v2/zooplus/search` | Search a Zooplus country shop by keyword. Region defaults to France. Page through food, litter, and accessory cards with local prices. |
 | `zoroProduct()` | GET / POST `/v2/zoro/product` | Get a Zoro product page: title, brand, USD price, Zoro number, manufacturer number, images, and specifications. |
 | `zoroSearch()` | GET / POST `/v2/zoro/search` | Search Zoro by keyword or category URL. Returns product cards with USD price, brand, Zoro number, and pagination. |
+
+## All Piloterr SDKs
+
+| SDK | Package | Install |
+| --- | --- | --- |
+| Node.js | [`@piloterr/sdk`](https://www.npmjs.com/package/@piloterr/sdk) | `npm install @piloterr/sdk` |
+| Python | [`piloterr`](https://pypi.org/project/piloterr/) | `pip install piloterr` |
+| Go | [`piloterr-go`](https://pkg.go.dev/github.com/piloterr/piloterr-go) | `go get github.com/piloterr/piloterr-go` |
+| .NET | [`Piloterr`](https://www.nuget.org/packages/Piloterr) | `dotnet add package Piloterr` |
+| Ruby | [`piloterr`](https://rubygems.org/gems/piloterr) | `gem install piloterr` |
+| PHP | [`piloterr/sdk`](https://packagist.org/packages/piloterr/sdk) | `composer require piloterr/sdk` |
+| Java | [`piloterr-java`](https://github.com/piloterr/piloterr-java) | build from source, see its README |
+| CLI | [`@piloterr/cli`](https://www.npmjs.com/package/@piloterr/cli) | `npm install -g @piloterr/cli` |
+| MCP server | [`@piloterr/mcp`](https://www.npmjs.com/package/@piloterr/mcp) | `npx -y @piloterr/mcp` |
 
 ## License
 
